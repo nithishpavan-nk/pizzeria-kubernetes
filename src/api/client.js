@@ -1,6 +1,6 @@
 // Centralized API base URL. Set REACT_APP_API_URL in a .env file at the
 // project root to point at your backend (defaults to localhost for dev).
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_BASE_URL = "/api";
 
 async function handleResponse(res) {
   let data = null;
