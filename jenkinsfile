@@ -1,0 +1,87 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Verify Docker') {
+            steps { 
+                sh '''
+                    docker --version
+                    docker compose version
+                    docker ps
+                '''
+            }
+        }
+
+        stage('Build & Deploy') {
+            steps {
+                withCredentials([file(credentialsId: 'pizzeria-env-file', variable: 'ENV_FILE')]) {
+                    dir("${WORKSPACE}") {
+                        sh '''
+                            rm -f .env
+                            cp "$ENV_FILE" .env
+                            chmod 600 .env
+                            docker compose -p pizzeria down || true
+                            docker compose -p pizzeria up --build -d
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Verify Containers') {
+            steps {
+                sh '''
+                    docker ps
+                '''
+            }
+        }
+
+        stage('Health Check') {
+            steps {
+                sh '''
+                    for i in {1..12}
+                    do
+                        if curl -f http://localhost:5000/api/health >/dev/null 2>&1
+                        then
+                            echo "✅ Backend is healthy!"
+                            exit 0
+                        fi
+
+                        echo "Waiting for backend..."
+                        sleep 5
+                    done
+
+                    echo "❌ Health check failed!"
+                    exit 1
+                '''
+            }
+        }
+    }
+
+    post {
+
+        success {
+            sh '''
+                docker image prune -f
+            '''
+            echo '🎉 Deployment successful!'
+        }
+
+        failure {
+            echo '❌ Deployment failed. Check the console output.'
+        }
+
+        always {
+            sh '''
+                docker ps -a
+            '''
+        }
+    }
+}

@@ -1,0 +1,116 @@
+:root {
+  /* color tokens — wood-fired pizzeria palette */
+  --crust: #1c1410;
+  --crust-soft: #2a2019;
+  --cream: #faf3e7;
+  --cream-dim: #f0e6d3;
+  --tomato: #c1432e;
+  --tomato-dark: #a3361f;
+  --gold: #e8a33d;
+  --basil: #5b7553;
+  --espresso: #3d2b1f;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-soft: 0 4px 20px rgba(28, 20, 16, 0.12);
+  --shadow-lift: 0 12px 32px rgba(28, 20, 16, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--espresso);
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--cream);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+a {
+  font-family: var(--font-body);
+}
+
+/* visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* signature torn / charred-edge divider, reused across pages */
+.charred-edge {
+  width: 100%;
+  height: 28px;
+  background-color: var(--cream);
+  clip-path: polygon(
+    0% 100%, 0% 35%, 3% 60%, 6% 20%, 9% 70%, 12% 10%, 15% 55%, 18% 30%,
+    21% 65%, 24% 15%, 27% 50%, 30% 25%, 33% 75%, 36% 10%, 39% 60%, 42% 20%,
+    45% 65%, 48% 30%, 51% 55%, 54% 15%, 57% 70%, 60% 25%, 63% 60%, 66% 10%,
+    69% 50%, 72% 75%, 75% 20%, 78% 65%, 81% 15%, 84% 55%, 87% 30%, 90% 65%,
+    93% 10%, 96% 60%, 100% 20%, 100% 100%
+  );
+  margin-top: -1px;
+  position: relative;
+  z-index: 2;
+}
+
+/* shared page-load fade-up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.serverBanner {
+  width: 100%;
+  background-color: var(--basil);
+  color: var(--cream);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 0.2px;
+}
+
+main.pageFade {
+  flex: 1;
+  animation: fadeUp 0.45s ease-out;
+}

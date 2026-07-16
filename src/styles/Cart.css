@@ -1,0 +1,215 @@
+.cartPage {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.cartPage h1 {
+  font-size: 44px;
+  color: var(--crust);
+  margin-bottom: 32px;
+}
+
+.cartEmpty {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.cartEmpty p {
+  font-family: var(--font-body);
+  color: var(--espresso);
+  opacity: 0.75;
+  margin: 12px 0 28px;
+}
+
+.cartEmpty button {
+  background-color: var(--tomato);
+  color: var(--cream);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cartEmpty button:hover {
+  background-color: var(--tomato-dark);
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cartRow {
+  display: grid;
+  grid-template-columns: 72px 1fr auto auto auto;
+  align-items: center;
+  gap: 18px;
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-soft);
+}
+
+.cartRowImage {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cartRowDetails h3 {
+  font-size: 17px;
+  color: var(--crust);
+  margin-bottom: 4px;
+}
+
+.cartRowPrice {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--espresso);
+  opacity: 0.7;
+}
+
+.cartRowQuantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+}
+
+.cartRowQuantity button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--crust);
+  background-color: transparent;
+  color: var(--crust);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.cartRowQuantity button:hover {
+  background-color: var(--cream-dim);
+}
+
+.cartRowQuantity span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cartRowSubtotal {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--tomato);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.cartRowRemove {
+  background: transparent;
+  border: none;
+  color: var(--espresso);
+  opacity: 0.55;
+  font-family: var(--font-body);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.cartRowRemove:hover {
+  opacity: 0.9;
+  color: var(--tomato);
+}
+
+.cartSummary {
+  margin-top: 36px;
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 28px 26px;
+  max-width: 360px;
+  margin-left: auto;
+}
+
+.cartSummaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--crust);
+}
+
+.cartSummaryNote {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--espresso);
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+.checkoutButton {
+  width: 100%;
+  margin-top: 20px;
+  background-color: var(--tomato);
+  color: var(--cream);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkoutButton:hover {
+  background-color: var(--tomato-dark);
+}
+
+.continueShoppingLink {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--espresso);
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 700px) {
+  .cartRow {
+    grid-template-columns: 56px 1fr;
+    grid-template-areas:
+      "image details"
+      "qty qty"
+      "subtotal remove";
+    row-gap: 10px;
+  }
+
+  .cartRowImage { grid-area: image; width: 56px; height: 56px; }
+  .cartRowDetails { grid-area: details; }
+  .cartRowQuantity { grid-area: qty; }
+  .cartRowSubtotal { grid-area: subtotal; }
+  .cartRowRemove { grid-area: remove; justify-self: end; }
+
+  .cartSummary {
+    max-width: 100%;
+  }
+}

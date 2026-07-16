@@ -1,0 +1,142 @@
+.home {
+  width: 100%;
+}
+
+.homeHero {
+  width: 100%;
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(28, 20, 16, 0.82) 0%,
+    rgba(28, 20, 16, 0.55) 45%,
+    rgba(28, 20, 16, 0.2) 75%
+  );
+}
+
+.headerContainer {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  max-width: 640px;
+  margin-left: 64px;
+  animation: fadeUp 0.7s ease-out;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.headerContainer h1 {
+  font-size: 76px;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.headerContainer p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cream-dim);
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+.orderLink {
+  text-decoration: none;
+}
+
+.headerContainer button {
+  color: var(--crust);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background-color: var(--tomato);
+  color: var(--cream);
+  height: 54px;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.headerContainer button:hover {
+  background-color: var(--tomato-dark);
+  transform: translateY(-2px);
+}
+
+.homeHighlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.highlightCard {
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-soft);
+  border-top: 3px solid var(--gold);
+}
+
+.highlightCard h3 {
+  font-size: 21px;
+  color: var(--crust);
+  margin-bottom: 10px;
+}
+
+.highlightCard p {
+  font-size: 15px;
+  color: var(--espresso);
+  opacity: 0.85;
+}
+
+@media only screen and (max-width: 900px) {
+  .homeHighlights {
+    grid-template-columns: 1fr;
+    padding: 40px 24px 64px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .homeHero {
+    height: 80vh;
+  }
+
+  .headerContainer {
+    margin-left: 0;
+    padding: 0 28px;
+    max-width: 100%;
+  }
+
+  .headerContainer h1 {
+    font-size: 44px;
+  }
+
+  .headerContainer p {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,38 @@
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: var(--crust);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 36px 16px 28px;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 28px;
+}
+
+.socialMedia a {
+  color: var(--cream-dim);
+  display: inline-flex;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.socialMedia a:hover {
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.socialMedia svg {
+  font-size: 28px;
+}
+
+.footer p {
+  color: var(--cream-dim);
+  font-family: var(--font-body);
+  font-size: 13px;
+  margin-top: 20px;
+  opacity: 0.7;
+}

@@ -1,0 +1,119 @@
+.confirmationPage {
+  width: 100%;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+}
+
+.confirmationPage .ticket {
+  max-width: 460px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift);
+  padding: 36px 32px;
+  animation: fadeUp 0.4s ease-out;
+  position: relative;
+}
+
+.confirmationPage .ticket::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  right: 24px;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 18px);
+}
+
+.confirmationPage .ticketStub {
+  border-bottom: 1.5px dashed rgba(61, 43, 31, 0.25);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.confirmationPage .ticketLabel {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--basil);
+  margin-bottom: 6px;
+}
+
+.confirmationPage .ticketStub h2 {
+  font-size: 28px;
+  color: var(--crust);
+}
+
+.confirmationPage .ticket > p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--espresso);
+  margin-bottom: 20px;
+}
+
+.confirmationItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(61, 43, 31, 0.12);
+  margin-bottom: 14px;
+}
+
+.confirmationRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--espresso);
+}
+
+.confirmationTotal {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--crust);
+  margin-bottom: 20px;
+}
+
+.emailConfirmed {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--basil);
+  margin-bottom: 20px;
+}
+
+.emailNotice {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--tomato-dark);
+  background-color: #fdf0ec;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+.confirmationPage .ghostButton {
+  display: inline-block;
+  background: transparent;
+  border: 1.5px solid var(--crust);
+  color: var(--crust);
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.confirmationPage .ghostButton:hover {
+  background-color: var(--cream-dim);
+}
