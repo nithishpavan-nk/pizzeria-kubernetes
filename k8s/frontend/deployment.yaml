@@ -21,7 +21,7 @@ spec:
       containers:
       - name: frontend
 
-        image: nithishpavan/pizzeria-web:v1
+        image: nithishpavan/pizzeria-web:v3	
 
         imagePullPolicy: Always
 

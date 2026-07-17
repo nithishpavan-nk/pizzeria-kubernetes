@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: pizzeria
+
+resources:
+  - base/namespace.yaml
+  - base/postgres-secret.yaml
+  - base/mail-secret.yaml
+
+  - postgres/service.yaml
+  - postgres/statefulset.yaml
+  - postgres/db-init-job.yaml
+
+  - backend/service.yaml
+  - backend/deployment.yaml
+
+  - frontend/service.yaml
+  - frontend/deployment.yaml
+
+  - ingress/ingress.yaml
+
+configMapGenerator:
+  - name: postgres-schema
+    files:
+      - postgres/scripts/schema.sql
+
+generatorOptions:
+  disableNameSuffixHash: true

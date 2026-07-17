@@ -58,3 +58,33 @@ spec:
             secretKeyRef:
               name: postgres-secret
               key: POSTGRES_DB
+
+        - name: SMTP_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mail-secret
+              key: SMTP_HOST
+
+        - name: SMTP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: mail-secret
+              key: SMTP_PORT
+
+        - name: SMTP_USER
+          valueFrom:
+            secretKeyRef:
+              name: mail-secret
+              key: SMTP_USER
+
+        - name: SMTP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mail-secret
+              key: SMTP_PASSWORD
+
+        - name: SMTP_FROM
+          valueFrom:
+            secretKeyRef:
+              name: mail-secret
+              key: SMTP_FROM

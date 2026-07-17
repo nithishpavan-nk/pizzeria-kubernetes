@@ -1,0 +1,48 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-init
+  namespace: pizzeria
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+
+      containers:
+      - name: postgres-init
+        image: postgres:16-alpine
+
+        env:
+        - name: PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_PASSWORD
+
+        command:
+        - sh
+        - -c
+        - |
+          until pg_isready -h postgres -U pizzeria_user; do
+            echo "Waiting for PostgreSQL..."
+            sleep 2
+          done
+
+          echo "Initializing database..."
+
+          psql \
+            -h postgres \
+            -U pizzeria_user \
+            -d pizzeria_db \
+            -f /schema/schema.sql
+
+          echo "Database initialized."
+
+        volumeMounts:
+        - name: schema
+          mountPath: /schema
+
+      volumes:
+      - name: schema
+        configMap:
+          name: postgres-schema

@@ -12,7 +12,7 @@ import OrderConfirmation from './pages/OrderConfirmation';
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const API_URL = "http://3.27.72.201:5000/api/message";
+const API_URL = "/api/message";
 
 function App() {
   const location = useLocation();
