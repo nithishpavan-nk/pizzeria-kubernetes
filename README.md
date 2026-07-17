@@ -238,25 +238,34 @@ kubectl get ingress -n pizzeria
 
 ## Home Page
 
-(Add Screenshot)
+<img width="1902" height="867" alt="Screenshot 2026-07-17 130544" src="https://github.com/user-attachments/assets/038922ad-a14d-4db1-bd9f-5a415aaf03a6" />
+
 
 ---
 
 ## Menu
 
-(Add Screenshot)
+<img width="1917" height="875" alt="Screenshot 2026-07-17 130612" src="https://github.com/user-attachments/assets/6417ced7-5bb6-4bce-aa4c-0caa50bed2ea" />
+
 
 ---
 
 ## Checkout
 
-(Add Screenshot)
+<img width="1917" height="865" alt="Screenshot 2026-07-17 130637" src="https://github.com/user-attachments/assets/5cbf05c1-89d1-436e-9b8a-beb855117634" />
+
+<img width="1911" height="867" alt="Screenshot 2026-07-17 130739" src="https://github.com/user-attachments/assets/98d393e9-7c42-468a-893f-fcb5ca13eb87" />
+
+<img width="1917" height="866" alt="Screenshot 2026-07-17 130804" src="https://github.com/user-attachments/assets/ac3419d4-7390-417b-93b5-18ecd752522c" />
+
+
 
 ---
 
 ## Mailtrap Email
 
-(Add Screenshot)
+<img width="1917" height="876" alt="Screenshot 2026-07-17 130833" src="https://github.com/user-attachments/assets/d2826818-75ca-4e93-bd3b-e9a1362f5503" />
+
 
 ---
 
@@ -323,9 +332,9 @@ This project helped me gain hands-on experience with:
 
 DevOps Engineer | AWS | Docker | Kubernetes | Jenkins | Linux
 
-LinkedIn: *(Add your profile)*
+LinkedIn: *www.linkedin.com/in/nithishpavan-nk*
 
-GitHub: *(Add your profile)*
+GitHub: *https://github.com/nithishpavan-nk*
 
 ---
 
