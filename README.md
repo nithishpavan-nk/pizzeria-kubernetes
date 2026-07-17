@@ -203,7 +203,7 @@ This removes the need for manually importing SQL files after deployment.
 Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/pizzeria-kubernetes.git
+git clone https://github.com/nithishpavan-nk/pizzeria-kubernetes.git
 
 cd pizzeria-kubernetes
 ```
@@ -271,13 +271,17 @@ kubectl get ingress -n pizzeria
 
 ## Kubernetes Pods
 
-(Add Screenshot)
+<img width="1887" height="846" alt="Screenshot 2026-07-17 131616" src="https://github.com/user-attachments/assets/acb7e117-1ad5-4b44-af5a-d5de979a9ea3" />
+
 
 ---
 
 ## Jenkins Pipeline
 
-(Add Screenshot)
+<img width="1915" height="868" alt="Screenshot 2026-07-17 145448" src="https://github.com/user-attachments/assets/03d9749b-dd03-4ac4-b4af-c9ca34743b24" />
+
+<img width="1917" height="872" alt="Screenshot 2026-07-17 145420" src="https://github.com/user-attachments/assets/36bb93cb-0d85-4050-a6ba-9fb42ff5d59a" />
+
 
 ---
 
