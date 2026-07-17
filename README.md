@@ -23,34 +23,47 @@ The project was built to demonstrate an end-to-end DevOps deployment workflow ra
 # 🏗️ Architecture
 
 ```
-                         GitHub
-                            │
-                            ▼
-                       Jenkins Pipeline
-                            │
-                 Build Docker Images
-                            │
-                            ▼
-                        Docker Hub
-                            │
-                            ▼
-                  Kubernetes Cluster (K3s)
-                            │
-        ┌───────────────────┼────────────────────┐
-        │                   │                    │
-        ▼                   ▼                    ▼
-   Frontend             Backend            PostgreSQL
- (React.js)          (Node.js API)       (StatefulSet)
-        │                   │                    │
-        └──────────────┬────┘                    │
-                       ▼                         │
-                Traefik Ingress                  │
-                       │                         │
-                       ▼                         │
-                  End Users                Persistent Volume
+                     Git Push
+                        │
+                        ▼
+                 ┌───────────────┐
+                 │    GitHub     │
+                 └───────────────┘
+                        │
+                        ▼
+         ┌────────────────────────────────┐
+         │        Jenkins Server          │
+         │         (EC2 Instance)         │
+         │────────────────────────────────│
+         │ • Clone Repository             │
+         │ • Build Docker Images          │
+         │ • Push Images to Docker Hub    │
+         │ • Deploy to Kubernetes         │
+         └────────────────────────────────┘
+                        │
+                        ▼
+                 ┌───────────────┐
+                 │  Docker Hub   │
+                 └───────────────┘
+                        │
+                        ▼
+        ┌────────────────────────────────┐
+        │   Kubernetes Cluster (K3s)     │
+        │        (EC2 Instance)          │
+        └────────────────────────────────┘
+                        │
+        ┌───────────────┼────────────────┐
+        ▼               ▼                ▼
+   Frontend Pod    Backend Pod     PostgreSQL
+    (React.js)     (Node.js API)   (StatefulSet)
+        │               │                │
+        └───────────────┼────────────────┘
+                        ▼
+                 Traefik Ingress
+                        │
+                        ▼
+                    End Users
 ```
-
----
 
 # 🚀 Technologies Used
 
